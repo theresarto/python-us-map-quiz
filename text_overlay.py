@@ -14,11 +14,9 @@ class TextOverlay:
         pin.ht()
         pin.color("black")
         pin.speed("fastest")
-
         pin.goto(x, y)
         pin.write(state, align=ALIGN, font=REG_FONT)
-
-        self.all_guesses.append(pin)
+        self.all_guesses.append(state)
 
 
 
