@@ -20,7 +20,7 @@ all_50_states = pd.read_csv("50_states.csv")
 all_50_states_list = all_50_states.state.to_list()
 # print(data)
 
-
+"""Creates a condition that continues asking if haven't guessed all states"""
 if len(text_overlay.all_guesses) < len(all_50_states.state):
     game_is_on = True
 
@@ -44,11 +44,6 @@ while game_is_on:
         remaining_states_to_guess = pd.DataFrame(missing_states)
         remaining_states_to_guess.to_csv("remaining_states.csv")
         break
-    # """Detects the coordinates based on mouse click"""
-# def get_mouse_click_coordinate(x, y):
-#     print(x, y)
-#
-#
-# turtle.onscreenclick(get_mouse_click_coordinate)
 
 turtle.mainloop()
+
