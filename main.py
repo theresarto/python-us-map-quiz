@@ -36,11 +36,12 @@ while game_is_on:
 
     if answer_state == "Exit":
         print(text_overlay.all_guesses)
-        missing_states = []
+        missing_states = [state for state in all_50_states_list if state not in text_overlay.all_guesses]
+        # missing_states = []
         # game_is_on = False
-        for state in all_50_states_list:
-            if state not in text_overlay.all_guesses:
-                missing_states.append(state)
+        # for state in all_50_states_list:
+        #     if state not in text_overlay.all_guesses:
+        #         missing_states.append(state)
         remaining_states_to_guess = pd.DataFrame(missing_states)
         remaining_states_to_guess.to_csv("remaining_states.csv")
         break
